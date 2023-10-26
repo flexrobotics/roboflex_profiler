@@ -1,6 +1,6 @@
-# roboflex.metrics_central
+# roboflex.profiler
 
-Metrics Central has two parts:
+Roboflex Profiler has two parts:
 
 1. The Profiler node. This node is intended to act as the root node of a computation graph. See metrics_central/examples/profile_graph.cpp, and examples/camera_follow/camera_follow.py for examples of how to us it. It brings two features:
 
@@ -10,6 +10,12 @@ Metrics Central has two parts:
 
 2. The MetricsCentral program. This program displays Metrics information for a running computation graph. Every row is a connection, and every column is some information about that connection, including frequency of invokation, latency, Bytes/sec, etc.
 
-    bazel run -c opt //roboflex/metrics_central:metrics_central
+    clone this repo
+    mkdir build && cd build
+    cmake ..
+    make
+
+    ... then find the 'metrics_central' program, and run it...
+
 
 ![](metrics_central_1.png)
