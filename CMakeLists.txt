@@ -1,8 +1,8 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.24)
 
 # sudo apt install libglew-dev
 
-project(roboflex_profiler VERSION 0.1.1 DESCRIPTION "roboflex profiler")
+project(roboflex_profiler VERSION 0.1.2 DESCRIPTION "roboflex profiler")
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 20)
