@@ -29,14 +29,12 @@ set(BUILD_ROBOFLEX_PYTHON_EXT OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(roboflex_core)
 # find_package(roboflex_core REQUIRED)
 
-# download and build roboflex_core
+# download and build roboflex_transport_mqtt
 FetchContent_Declare(roboflex_transport_mqtt
     GIT_REPOSITORY https://github.com/flexrobotics/roboflex_transport_mqtt.git
     GIT_TAG        main
 )
-#set(BUILD_ROBOFLEX_PYTHON_EXT OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(roboflex_transport_mqtt)
-# find_package(roboflex_core REQUIRED)
 
 
 
@@ -143,7 +141,7 @@ install(DIRECTORY include/roboflex_profiler
 # --------------------
 # Create the metrics_central executable
 add_executable(metrics_central src/metrics_central.cpp src/metrics_central_impl.cpp)
-target_link_libraries(metrics_central PRIVATE 
+target_link_libraries(metrics_central PUBLIC 
     roboflex_core 
     roboflex_profiler
     imgui
